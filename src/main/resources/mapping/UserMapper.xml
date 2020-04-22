@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.modules.activity.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.example.modules.activity.entity.User" >
+        <id column="userName" property="userName" jdbcType="VARCHAR" />
+        <result column="passWord" property="passWord" jdbcType="VARCHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="title" property="title" jdbcType="VARCHAR" />
+    </resultMap>
+    <select id="getUser" resultType="com.example.modules.activity.entity.User">
+    </select>
+    <insert id="Register" parameterType ="com.example.modules.activity.entity.User" >
+        insert into user(username,password,rank,name,phone,title,state) values (#{userName},#{passWord}
+        ,#{rank},#{name},#{phone},#{title},#{state})
+    </insert>
+</mapper>
