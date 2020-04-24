@@ -19,9 +19,6 @@
             <!-- 从数据库返回的值被清理前后的空格  -->
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
-        <sqlMapGenerator targetPackage="com.example.modules.activity.mapper" targetProject="src\main\java">
-            <property name="enableSubPackages" value="true"/>
-        </sqlMapGenerator>
 
         <!--数据库表-->
         <!-- 指定数据表 -->
