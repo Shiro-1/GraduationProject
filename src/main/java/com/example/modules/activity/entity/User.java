@@ -27,6 +27,17 @@ public class User {
                 '}';
     }
 
+    public User(int id ,String userName, String passWord, int rank, String name, int phone, String title, int state) {
+        this.id = id;
+        this.userName = userName;
+        this.passWord = passWord;
+        this.rank = rank;
+        this.name = name;
+        this.phone = phone;
+        this.title = title;
+        this.state = state;
+    }
+
     public User(String userName, String passWord, int rank, String name, int phone, String title, int state) {
         this.userName = userName;
         this.passWord = passWord;
@@ -39,10 +50,6 @@ public class User {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getUserName() {

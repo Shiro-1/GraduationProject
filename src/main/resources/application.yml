@@ -1,6 +1,7 @@
 server:
   port: 8088
-
+  servlet:
+    context-path: /Activity_System
 spring:
   datasource:
     name: test

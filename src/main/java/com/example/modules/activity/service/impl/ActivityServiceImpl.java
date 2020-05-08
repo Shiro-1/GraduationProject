@@ -17,9 +17,8 @@ public class ActivityServiceImpl implements ActivityService {
     ActivityMapper activityMapper;
     @Override
     public int addActivity(Activity activity) {
-        return 0;
+        return activityMapper.addActivity(activity);
     }
-
     @Override
     public int ModifyActivity(Activity activity) {
         return 0;
