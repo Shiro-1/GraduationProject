@@ -1,4 +1,5 @@
 package com.example.modules.activity.controller;
+import com.example.modules.activity.entity.Result;
 import com.example.modules.activity.entity.User;
 import com.example.modules.activity.service.UserService;
 import com.example.modules.activity.tools.tools;
@@ -25,21 +26,32 @@ public class UserController extends tools {
     @PostMapping("/login")
     public String Login(String username,String password){
         log.info("用户输入的登录信息：username = "+username+",password:"+password);
-        if(username.equals("")||password.equals("")){
-            return "用户名和密码不准为空！";
+        Result<User> result = new Result<>();
+        if(username.equals("")||password.equals("")||username.isEmpty()||password.isEmpty()){
+            result.setWords("用户名和密码不准为空！");
+            result.setState("1001");
+            return tools.toJson(result);
         }
         User user = userService.getUser(username);
         if(user == null){
-            return "账号未注册！";
+            result.setWords("账号未注册！");
+            result.setState("1002");
+            return tools.toJson(result);
         }
         else if(user.getPassWord().equals(password)){
-            return "登录成功！"+"Your Name is"+username+";Your password is"+password;
+            result.setWords("登录成功！");
+            result.setState("0000");
+            result.setObject(user);
+            log.info("返回参数为："+tools.toJson(user));
+            return tools.toJson(result);
         }
-        return "登录失败！密码错误！请检查账号信息！";
+        result.setWords("登录失败！密码错误！请检查账号信息！");
+        result.setState("1000");
+        return tools.toJson(result);
     }
 
     @PostMapping("/register")
-    public String Register(String userName,String passWord,String name,int phone ) {
+    public String Register(String userName,String passWord,String name,String phone ) {
         User user = new User(userName,passWord,0,name,phone,"",1);
         User active = userService.getUser(userName);
         //判断注册名是否已存在
@@ -62,7 +74,7 @@ public class UserController extends tools {
             return "用户名密码不许为空！";
         }
         User oldUser = userService.getUser(username);
-        User user = new User(username,password,0,name==null?"":name,phone==null?0:new Integer(phone),"",1);
+        User user = new User(username,password,0,name==null?"":name,phone==null?"":phone,"",1);
         int flag = userService.modify(user);
         if(flag==1){
             return "修改成功！";

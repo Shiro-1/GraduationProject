@@ -1,34 +1,25 @@
 package com.example.modules.activity.entity;
 
-public class Result<T> {
+public class Result<T> extends Attention {
     private T object;
-    private String state;
-    private String words;
 
     public Result() {
     }
 
-    public Result(T object) {
+    public Result(T object,String state,String words) {
         this.object = object;
     }
 
+    public T getObject() {
+        return object;
+    }
+    public void setState(String code) {
+        super.code = code;
+    }
+    public void setWords(String words) {
+        super.words = words;
+    }
     public void setObject(T t){
         this.object = t;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public String getWords() {
-        return words;
-    }
-
-    public void setWords(String words) {
-        this.words = words;
     }
 }

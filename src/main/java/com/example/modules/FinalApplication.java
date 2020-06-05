@@ -6,11 +6,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.Environment;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 @Slf4j
 @MapperScan("com.example.modules.activity.mapper")
+@CrossOrigin
 @SpringBootApplication
 public class FinalApplication {
     public static void main(String[] args) throws UnknownHostException {

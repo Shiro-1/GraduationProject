@@ -7,7 +7,7 @@ public class User {
     private String passWord;
     private int rank;
     private String name;
-    private int phone;
+    private String phone;
     private String title;
     private int state;
     public User() {
@@ -27,7 +27,7 @@ public class User {
                 '}';
     }
 
-    public User(int id ,String userName, String passWord, int rank, String name, int phone, String title, int state) {
+    public User(int id ,String userName, String passWord, int rank, String name, String phone, String title, int state) {
         this.id = id;
         this.userName = userName;
         this.passWord = passWord;
@@ -38,7 +38,7 @@ public class User {
         this.state = state;
     }
 
-    public User(String userName, String passWord, int rank, String name, int phone, String title, int state) {
+    public User(String userName, String passWord, int rank, String name, String phone, String title, int state) {
         this.userName = userName;
         this.passWord = passWord;
         this.rank = rank;
@@ -84,11 +84,11 @@ public class User {
         this.name = name;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
