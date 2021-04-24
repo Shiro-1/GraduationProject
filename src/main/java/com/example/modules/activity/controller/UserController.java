@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.websocket.Session;
 import java.util.List;
 
 @Slf4j
@@ -24,7 +27,7 @@ public class UserController extends tools {
     }
 
     @PostMapping("/login")
-    public String Login(String username,String password){
+    public String Login(HttpServletRequest request, String username, String password){
         log.info("用户输入的登录信息：username = "+username+",password:"+password);
         Result<User> result = new Result<>();
         if(username.equals("")||password.equals("")||username.isEmpty()||password.isEmpty()){

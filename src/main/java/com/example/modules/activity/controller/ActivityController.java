@@ -88,7 +88,8 @@ public class ActivityController {
         return activities;
     }
     @PostMapping("/test")
-    public List<Activity> Test(String userId){
-        return null;
+    public String stTest(String userId){
+
+        return "这是一个简单的测试接口，您的用户ID是："+userId;
     }
 }
