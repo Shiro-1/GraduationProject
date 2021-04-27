@@ -2,54 +2,59 @@ package com.example.modules.activity.entity;
 
 
 public class User {
-    private int id;
+    private int userId;
+    private String userAccount;
+    private String userPassword;
+    private int userLevel;
     private String userName;
-    private String passWord;
-    private int rank;
-    private String name;
-    private String phone;
-    private String title;
-    private int state;
+    private String userPhone;
+    private String userPartment;
+    private int userState;
+
     public User() {
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", userName='" + userName + '\'' +
-                ", passWord='" + passWord + '\'' +
-                ", rank=" + rank +
-                ", name='" + name + '\'' +
-                ", phone=" + phone +
-                ", title='" + title + '\'' +
-                ", state=" + state +
-                '}';
-    }
-
-    public User(int id ,String userName, String passWord, int rank, String name, String phone, String title, int state) {
-        this.id = id;
+    public User(int userId, String userAccount, String userPassword, int userLevel, String userName, String userPhone, String userPartment, int userState) {
+        this.userId = userId;
+        this.userAccount = userAccount;
+        this.userPassword = userPassword;
+        this.userLevel = userLevel;
         this.userName = userName;
-        this.passWord = passWord;
-        this.rank = rank;
-        this.name = name;
-        this.phone = phone;
-        this.title = title;
-        this.state = state;
+        this.userPhone = userPhone;
+        this.userPartment = userPartment;
+        this.userState = userState;
     }
 
-    public User(String userName, String passWord, int rank, String name, String phone, String title, int state) {
-        this.userName = userName;
-        this.passWord = passWord;
-        this.rank = rank;
-        this.name = name;
-        this.phone = phone;
-        this.title = title;
-        this.state = state;
+    public int getUserId() {
+        return userId;
     }
 
-    public int getId() {
-        return id;
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public String getUserAccount() {
+        return userAccount;
+    }
+
+    public void setUserAccount(String userAccount) {
+        this.userAccount = userAccount;
+    }
+
+    public String getUserPassword() {
+        return userPassword;
+    }
+
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
+    }
+
+    public int getUserLevel() {
+        return userLevel;
+    }
+
+    public void setUserLevel(int userLevel) {
+        this.userLevel = userLevel;
     }
 
     public String getUserName() {
@@ -60,51 +65,27 @@ public class User {
         this.userName = userName;
     }
 
-    public String getPassWord() {
-        return passWord;
+    public String getUserPhone() {
+        return userPhone;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
+    public void setUserPhone(String userPhone) {
+        this.userPhone = userPhone;
     }
 
-    public int getRank() {
-        return rank;
+    public String getUserPartment() {
+        return userPartment;
     }
 
-    public void setRank(int rank) {
-        this.rank = rank;
+    public void setUserPartment(String userPartment) {
+        this.userPartment = userPartment;
     }
 
-    public String getName() {
-        return name;
+    public int getUserState() {
+        return userState;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public int getState() {
-        return state;
-    }
-
-    public void setState(int state) {
-        this.state = state;
+    public void setUserState(int userState) {
+        this.userState = userState;
     }
 }

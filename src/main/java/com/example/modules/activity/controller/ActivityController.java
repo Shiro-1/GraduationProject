@@ -26,6 +26,7 @@ public class ActivityController {
         List<Activity> Activities = activityService.getActivity();
         return Activities;
     }
+
     @PostMapping("/add")
     public Result<Activity> Add(String activity_name,String manager_name,int manager_id,String address
             ,String start_time,String end_time,int max_num,int status){
@@ -43,6 +44,7 @@ public class ActivityController {
         result.setWords("添加活动失败！");
         return result;
     }
+
     @PostMapping("/join")
     public String Join(String userId,String activityId){
         Activity activity = activityService.get(activityId);
@@ -77,6 +79,7 @@ public class ActivityController {
             return tools.toJson(result);
         }
     }
+
     @PostMapping("/activities")
     public List<Activity> activities(String userId){
         List<Attend> list = activityService.getAttention(userId);
@@ -87,6 +90,7 @@ public class ActivityController {
         }
         return activities;
     }
+
     @PostMapping("/test")
     public String stTest(String userId){
 

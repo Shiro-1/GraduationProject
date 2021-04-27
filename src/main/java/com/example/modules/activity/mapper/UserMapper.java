@@ -11,7 +11,7 @@ import java.util.List;
 public interface UserMapper {
     @Select("select * from user")
     List<User> getUsers();
-    @Select("select * from user where userName = #{username}")
+    @Select("select * from user where user_account = #{username}")
     User getUser(String username);
     @Insert("insert into user (userName,passWord,`rank`,name,phone,title,state) values (#{userName},#{passWord},#{rank},#{name},#{phone},#{title},#{state})")
     int Register(User user);

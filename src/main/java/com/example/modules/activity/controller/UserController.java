@@ -41,7 +41,7 @@ public class UserController extends tools {
             result.setState("1002");
             return tools.toJson(result);
         }
-        else if(user.getPassWord().equals(password)){
+        else if(user.getUserPassword().equals(password)){
             result.setWords("登录成功！");
             result.setState("0000");
             result.setObject(user);
@@ -55,7 +55,7 @@ public class UserController extends tools {
 
     @PostMapping("/register")
     public String Register(String userName,String passWord,String name,String phone ) {
-        User user = new User(userName,passWord,0,name,phone,"",1);
+        User user = new User();
         User active = userService.getUser(userName);
         //判断注册名是否已存在
         if(active!=null){
@@ -77,7 +77,7 @@ public class UserController extends tools {
             return "用户名密码不许为空！";
         }
         User oldUser = userService.getUser(username);
-        User user = new User(username,password,0,name==null?"":name,phone==null?"":phone,"",1);
+        User user = new User();
         int flag = userService.modify(user);
         if(flag==1){
             return "修改成功！";
