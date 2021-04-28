@@ -2,7 +2,6 @@ package com.example.modules.activity.mapper;
 
 import com.example.modules.activity.entity.Activity;
 import com.example.modules.activity.entity.Attend;
-import com.example.modules.activity.entity.Attention;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;

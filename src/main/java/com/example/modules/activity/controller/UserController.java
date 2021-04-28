@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.websocket.Session;
 import java.util.List;
 
 @Slf4j
@@ -27,21 +25,21 @@ public class UserController extends tools {
     }
 
     @PostMapping("/login")
-    public String Login(HttpServletRequest request, String username, String password){
-        log.info("用户输入的登录信息：username = "+username+",password:"+password);
+    public String Login(String userName, String passWord){
+        log.info("用户输入的登录信息：username = "+userName+",password:"+passWord);
         Result<User> result = new Result<>();
-        if(username.equals("")||password.equals("")||username.isEmpty()||password.isEmpty()){
+        if(userName.equals("")||passWord.equals("")||userName.isEmpty()||passWord.isEmpty()){
             result.setWords("用户名和密码不准为空！");
             result.setState("1001");
             return tools.toJson(result);
         }
-        User user = userService.getUser(username);
-        if(user == null){
-            result.setWords("账号未注册！");
+        User user = userService.getUser(userName);
+        if(user == null||user.getUserState()==0){
+            result.setWords("用户不存在或用户已被注销！");
             result.setState("1002");
             return tools.toJson(result);
         }
-        else if(user.getUserPassword().equals(password)){
+        else if(user.getUserPassword().equals(passWord)){
             result.setWords("登录成功！");
             result.setState("0000");
             result.setObject(user);
@@ -54,11 +52,11 @@ public class UserController extends tools {
     }
 
     @PostMapping("/register")
-    public String Register(String userName,String passWord,String name,String phone ) {
-        User user = new User();
+    public String Register(String userName,String passWord,int level,String name,String phone,String department,int state ) {
+        User user = new User(userName,passWord,level,name,phone,department,state);
         User active = userService.getUser(userName);
-        //判断注册名是否已存在
-        if(active!=null){
+        //判断账号是否已存在
+        if(active!=null&&active.getUserState()==1){
             return "该用户已存在！";
         }
         //进行用户注册
@@ -72,13 +70,21 @@ public class UserController extends tools {
     }
 
     @PostMapping("/modify")
-    public String Modify(String username,String password,String name,String phone ){
-        if(username==null||password==null){
+    public String Modify(String userName,String passWord,int level,String name,String phone,String department,int state ){
+        if(userName==null||passWord==null){
             return "用户名密码不许为空！";
         }
-        User oldUser = userService.getUser(username);
-        User user = new User();
-        int flag = userService.modify(user);
+        User oldUser = userService.getUser(userName);
+        if(oldUser==null){
+            return "用户不存在或用户已被注销";
+        }
+        oldUser.setUserPassword(passWord);
+        oldUser.setUserLevel(level);
+        oldUser.setUserName(name);
+        oldUser.setUserPhone(phone);
+        oldUser.setUserPartment(department);
+        oldUser.setUserState(state);
+        int flag = userService.modify(oldUser);
         if(flag==1){
             return "修改成功！";
         }

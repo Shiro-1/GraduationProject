@@ -13,8 +13,8 @@ public interface UserMapper {
     List<User> getUsers();
     @Select("select * from user where user_account = #{username}")
     User getUser(String username);
-    @Insert("insert into user (userName,passWord,`rank`,name,phone,title,state) values (#{userName},#{passWord},#{rank},#{name},#{phone},#{title},#{state})")
+    @Insert("insert into user (user_account,user_password,user_level,user_name,user_phone,user_partment,user_state) values (#{userAccount},#{userPassword},#{userLevel},#{userName},#{userPhone},#{userPartment},#{userState})")
     int Register(User user);
-    @Update("update user set passWord = #{passWord},name = #{name},phone = #{phone} where username = #{userName}")
+    @Update("update user set user_password = #{userPassword},user_name = #{userName},user_phone = #{userPhone},user_state = #{userState},user_level = #{userLevel},user_partment = #{userPartment} where user_account = #{userAccount}")
     int modify(User user);
 }
