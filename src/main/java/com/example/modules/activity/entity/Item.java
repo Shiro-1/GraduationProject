@@ -1,19 +1,43 @@
 package com.example.modules.activity.entity;
 
 public class Item {
-    int itemNum;
-    int itemRemain;
-    int itemSupplier;
-    int itemAddress;
+    private String itemName;
+    private String itemBelong;
+    private int itemNum;
+    private int itemRemain;
+    private String itemSupplier;
+    private String itemAddress;
+    private int itemNumber;
+    private String itemImage;
 
     public Item() {
     }
 
-    public Item(int itemNum, int itemRemain, int itemSupplier, int itemAddress) {
+    public Item(String itemName, String itemBelong, int itemNum, int itemRemain, String itemSupplier, String itemAddress, int itemNumber, String itemImage) {
+        this.itemName = itemName;
+        this.itemBelong = itemBelong;
         this.itemNum = itemNum;
         this.itemRemain = itemRemain;
         this.itemSupplier = itemSupplier;
         this.itemAddress = itemAddress;
+        this.itemNumber = itemNumber;
+        this.itemImage = itemImage;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+
+    public String getItemBelong() {
+        return itemBelong;
+    }
+
+    public void setItemBelong(String itemBelong) {
+        this.itemBelong = itemBelong;
     }
 
     public int getItemNum() {
@@ -32,19 +56,35 @@ public class Item {
         this.itemRemain = itemRemain;
     }
 
-    public int getItemSupplier() {
+    public String getItemSupplier() {
         return itemSupplier;
     }
 
-    public void setItemSupplier(int itemSupplier) {
+    public void setItemSupplier(String itemSupplier) {
         this.itemSupplier = itemSupplier;
     }
 
-    public int getItemAddress() {
+    public String getItemAddress() {
         return itemAddress;
     }
 
-    public void setItemAddress(int itemAddress) {
+    public void setItemAddress(String itemAddress) {
         this.itemAddress = itemAddress;
+    }
+
+    public int getItemNumber() {
+        return itemNumber;
+    }
+
+    public void setItemNumber(int itemNumber) {
+        this.itemNumber = itemNumber;
+    }
+
+    public String getItemImage() {
+        return itemImage;
+    }
+
+    public void setItemImage(String itemImage) {
+        this.itemImage = itemImage;
     }
 }

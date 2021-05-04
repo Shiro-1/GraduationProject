@@ -28,5 +28,4 @@ public class FinalApplication {
                 "Swagger-UI: \t\thttp://" + ip + ":" + port + path + "/doc.html\n" +
                 "----------------------------------------------------------");
     }
-
 }
