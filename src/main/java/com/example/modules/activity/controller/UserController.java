@@ -25,30 +25,31 @@ public class UserController extends tools {
     }
 
     @PostMapping("/login")
-    public String Login(String userName, String passWord){
-        log.info("用户输入的登录信息：username = "+userName+",password:"+passWord);
+    public Result<User> Login(String username, String password){
+        log.info("用户输入的登录信息：username = "+username+",password="+password);
         Result<User> result = new Result<>();
-        if(userName.equals("")||passWord.equals("")||userName.isEmpty()||passWord.isEmpty()){
+        if(username.equals("")||password.equals("")||username==null||password==null){
             result.setWords("用户名和密码不准为空！");
             result.setState("1001");
-            return tools.toJson(result);
+            return result;
         }
-        User user = userService.getUser(userName);
+        User user = userService.getUser(username);
         if(user == null||user.getUserState()==0){
             result.setWords("用户不存在或用户已被注销！");
             result.setState("1002");
-            return tools.toJson(result);
+            return result;
         }
-        else if(user.getUserPassword().equals(passWord)){
+        else if(user.getUserPassword().equals(password)){
             result.setWords("登录成功！");
             result.setState("0000");
             result.setObject(user);
             log.info("返回参数为："+tools.toJson(user));
-            return tools.toJson(result);
+            return result;
         }
         result.setWords("登录失败！密码错误！请检查账号信息！");
         result.setState("1000");
-        return tools.toJson(result);
+        log.info("返回参数为："+tools.toJson(result));
+        return result;
     }
 
     @PostMapping("/register")

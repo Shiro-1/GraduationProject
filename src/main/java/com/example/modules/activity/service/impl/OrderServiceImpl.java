@@ -19,4 +19,14 @@ public class OrderServiceImpl implements OrderService {
     public List<Order> getAllOrder() {
         return orderMapper.getOrders();
     }
+
+    @Override
+    public List<Order> getOrders(int id) {
+        return orderMapper.getOrderbyID(id);
+    }
+
+    @Override
+    public int addOrder(Order order) {
+        return orderMapper.addOrder(order);
+    }
 }
