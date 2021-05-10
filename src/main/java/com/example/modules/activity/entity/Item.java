@@ -2,22 +2,22 @@ package com.example.modules.activity.entity;
 
 public class Item {
     private String itemName;
-    private String itemBelong;
-    private int itemNum;
     private int itemRemain;
+    private int itemPrice;
+    private String itemBelong;
     private String itemSupplier;
     private String itemAddress;
-    private int itemNumber;
+    private String itemNumber;
     private String itemImage;
 
     public Item() {
     }
 
-    public Item(String itemName, String itemBelong, int itemNum, int itemRemain, String itemSupplier, String itemAddress, int itemNumber, String itemImage) {
+    public Item(String itemName, int itemRemain, int itemPrice, String itemBelong, String itemSupplier, String itemAddress, String itemNumber, String itemImage) {
         this.itemName = itemName;
-        this.itemBelong = itemBelong;
-        this.itemNum = itemNum;
         this.itemRemain = itemRemain;
+        this.itemPrice = itemPrice;
+        this.itemBelong = itemBelong;
         this.itemSupplier = itemSupplier;
         this.itemAddress = itemAddress;
         this.itemNumber = itemNumber;
@@ -32,28 +32,28 @@ public class Item {
         this.itemName = itemName;
     }
 
-    public String getItemBelong() {
-        return itemBelong;
-    }
-
-    public void setItemBelong(String itemBelong) {
-        this.itemBelong = itemBelong;
-    }
-
-    public int getItemNum() {
-        return itemNum;
-    }
-
-    public void setItemNum(int itemNum) {
-        this.itemNum = itemNum;
-    }
-
     public int getItemRemain() {
         return itemRemain;
     }
 
     public void setItemRemain(int itemRemain) {
         this.itemRemain = itemRemain;
+    }
+
+    public int getItemPrice() {
+        return itemPrice;
+    }
+
+    public void setItemPrice(int itemPrice) {
+        this.itemPrice = itemPrice;
+    }
+
+    public String getItemBelong() {
+        return itemBelong;
+    }
+
+    public void setItemBelong(String itemBelong) {
+        this.itemBelong = itemBelong;
     }
 
     public String getItemSupplier() {
@@ -72,11 +72,11 @@ public class Item {
         this.itemAddress = itemAddress;
     }
 
-    public int getItemNumber() {
+    public String getItemNumber() {
         return itemNumber;
     }
 
-    public void setItemNumber(int itemNumber) {
+    public void setItemNumber(String itemNumber) {
         this.itemNumber = itemNumber;
     }
 

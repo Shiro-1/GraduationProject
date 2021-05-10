@@ -2,7 +2,6 @@ package com.example.modules.activity.controller;
 
 import com.example.modules.activity.entity.Item;
 import com.example.modules.activity.service.ItemService;
-import com.example.modules.activity.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,5 +20,10 @@ public class ItemController {
     @PostMapping("/select")
     public List<Item> Select(){
         return itemService.getItem();
+    }
+
+    @PostMapping("/getItem")
+    public Item getItem(int itemId){
+        return itemService.getItem(itemId);
     }
 }

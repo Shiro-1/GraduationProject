@@ -1,8 +1,6 @@
 package com.example.modules.activity.service.impl;
 
-import com.example.modules.activity.entity.Activity;
 import com.example.modules.activity.entity.Item;
-import com.example.modules.activity.mapper.ActivityMapper;
 import com.example.modules.activity.mapper.ItemMapper;
 import com.example.modules.activity.service.ItemService;
 import lombok.extern.slf4j.Slf4j;
@@ -19,6 +17,16 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public List<Item> getItem() {
-        return itemMapper.getItem();
+        return itemMapper.getItems();
+    }
+
+    @Override
+    public Item getItem(int id) {
+        return itemMapper.getItem(id);
+    }
+
+    @Override
+    public int updateItem(Item item) {
+        return itemMapper.addItem(item);
     }
 }
