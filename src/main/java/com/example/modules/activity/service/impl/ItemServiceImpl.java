@@ -21,12 +21,18 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public Item getItem(int id) {
+    public Item getItem(String id) {
         return itemMapper.getItem(id);
     }
 
     @Override
     public int updateItem(Item item) {
+        return itemMapper.updateItem(item);
+    }
+
+    @Override
+    public int addItem(Item item) {
         return itemMapper.addItem(item);
     }
+
 }

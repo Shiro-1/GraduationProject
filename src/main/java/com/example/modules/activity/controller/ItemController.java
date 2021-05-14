@@ -19,11 +19,25 @@ public class ItemController {
 
     @PostMapping("/select")
     public List<Item> Select(){
+        List<Item> list = itemService.getItem();
+
         return itemService.getItem();
     }
 
     @PostMapping("/getItem")
-    public Item getItem(int itemId){
+    public Item getItem(String itemId){
         return itemService.getItem(itemId);
+    }
+
+    @PostMapping("/updateItem")
+    public int updateItem(String name,String number,int remain,int price,String belong,String address,String image){
+        Item item = new Item(name,number,remain,price,belong,address,image);
+        return itemService.updateItem(item);
+    }
+
+    @PostMapping("/addItem")
+    public int addItem(String name,String number,int remain,int price,String belong,String address,String image){
+        Item item = new Item(name,number,remain,price,belong,address,image);
+        return itemService.addItem(item);
     }
 }

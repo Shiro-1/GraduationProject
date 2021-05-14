@@ -2,25 +2,23 @@ package com.example.modules.activity.entity;
 
 public class Item {
     private String itemName;
+    private String itemNumber;
     private int itemRemain;
     private int itemPrice;
     private String itemBelong;
-    private String itemSupplier;
     private String itemAddress;
-    private String itemNumber;
     private String itemImage;
 
     public Item() {
     }
 
-    public Item(String itemName, int itemRemain, int itemPrice, String itemBelong, String itemSupplier, String itemAddress, String itemNumber, String itemImage) {
+    public Item(String itemName, String itemNumber, int itemRemain, int itemPrice, String itemBelong, String itemAddress, String itemImage) {
         this.itemName = itemName;
+        this.itemNumber = itemNumber;
         this.itemRemain = itemRemain;
         this.itemPrice = itemPrice;
         this.itemBelong = itemBelong;
-        this.itemSupplier = itemSupplier;
         this.itemAddress = itemAddress;
-        this.itemNumber = itemNumber;
         this.itemImage = itemImage;
     }
 
@@ -54,14 +52,6 @@ public class Item {
 
     public void setItemBelong(String itemBelong) {
         this.itemBelong = itemBelong;
-    }
-
-    public String getItemSupplier() {
-        return itemSupplier;
-    }
-
-    public void setItemSupplier(String itemSupplier) {
-        this.itemSupplier = itemSupplier;
     }
 
     public String getItemAddress() {

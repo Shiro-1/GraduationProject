@@ -1,25 +1,37 @@
 package com.example.modules.activity.entity;
 
-import java.sql.Timestamp;
-
 public class Order {
+    private String orderDetail;
     private int orderUserId;
-    private int orderItemId;
-    private int orderNum;
-    private String orderTime;
+    private int orderTotal;
+    private String orderAddtime;
     private int orderState;
+    private String orderClient;
+    private String orderRemark;
     private int orderIO;
+    private String orderTime;
 
     public Order() {
     }
 
-    public Order(int orderUserId, int orderItemId, int orderNum, String orderTime, int orderState, int orderIO) {
+    public Order(String orderDetail, int orderUserId, int orderTotal, String orderAddtime, int orderState, String orderClient, String orderRemark, int orderIO, String orderTime) {
+        this.orderDetail = orderDetail;
         this.orderUserId = orderUserId;
-        this.orderItemId = orderItemId;
-        this.orderNum = orderNum;
-        this.orderTime = orderTime;
+        this.orderTotal = orderTotal;
+        this.orderAddtime = orderAddtime;
         this.orderState = orderState;
+        this.orderClient = orderClient;
+        this.orderRemark = orderRemark;
         this.orderIO = orderIO;
+        this.orderTime = orderTime;
+    }
+
+    public String getOrderDetail() {
+        return orderDetail;
+    }
+
+    public void setOrderDetail(String orderDetail) {
+        this.orderDetail = orderDetail;
     }
 
     public int getOrderUserId() {
@@ -30,28 +42,20 @@ public class Order {
         this.orderUserId = orderUserId;
     }
 
-    public int getOrderItemId() {
-        return orderItemId;
+    public int getOrderTotal() {
+        return orderTotal;
     }
 
-    public void setOrderItemId(int orderItemId) {
-        this.orderItemId = orderItemId;
+    public void setOrderTotal(int orderTotal) {
+        this.orderTotal = orderTotal;
     }
 
-    public int getOrderNum() {
-        return orderNum;
+    public String getOrderAddtime() {
+        return orderAddtime;
     }
 
-    public void setOrderNum(int orderNum) {
-        this.orderNum = orderNum;
-    }
-
-    public String getOrderTime() {
-        return orderTime;
-    }
-
-    public void setOrderTime(String orderTime) {
-        this.orderTime = orderTime;
+    public void setOrderAddtime(String orderAddtime) {
+        this.orderAddtime = orderAddtime;
     }
 
     public int getOrderState() {
@@ -62,11 +66,35 @@ public class Order {
         this.orderState = orderState;
     }
 
+    public String getOrderClient() {
+        return orderClient;
+    }
+
+    public void setOrderClient(String orderClient) {
+        this.orderClient = orderClient;
+    }
+
+    public String getOrderRemark() {
+        return orderRemark;
+    }
+
+    public void setOrderRemark(String orderRemark) {
+        this.orderRemark = orderRemark;
+    }
+
     public int getOrderIO() {
         return orderIO;
     }
 
     public void setOrderIO(int orderIO) {
         this.orderIO = orderIO;
+    }
+
+    public String getOrderTime() {
+        return orderTime;
+    }
+
+    public void setOrderTime(String orderTime) {
+        this.orderTime = orderTime;
     }
 }
