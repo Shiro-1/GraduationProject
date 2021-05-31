@@ -4,6 +4,7 @@ public class Item {
     private String itemName;
     private String itemNumber;
     private int itemRemain;
+    private int itemApply;
     private int itemPrice;
     private String itemBelong;
     private String itemAddress;
@@ -12,10 +13,11 @@ public class Item {
     public Item() {
     }
 
-    public Item(String itemName, String itemNumber, int itemRemain, int itemPrice, String itemBelong, String itemAddress, String itemImage) {
+    public Item(String itemName, String itemNumber, int itemRemain, int itemApply, int itemPrice, String itemBelong, String itemAddress, String itemImage) {
         this.itemName = itemName;
         this.itemNumber = itemNumber;
         this.itemRemain = itemRemain;
+        this.itemApply = itemApply;
         this.itemPrice = itemPrice;
         this.itemBelong = itemBelong;
         this.itemAddress = itemAddress;
@@ -30,12 +32,28 @@ public class Item {
         this.itemName = itemName;
     }
 
+    public String getItemNumber() {
+        return itemNumber;
+    }
+
+    public void setItemNumber(String itemNumber) {
+        this.itemNumber = itemNumber;
+    }
+
     public int getItemRemain() {
         return itemRemain;
     }
 
     public void setItemRemain(int itemRemain) {
         this.itemRemain = itemRemain;
+    }
+
+    public int getItemApply() {
+        return itemApply;
+    }
+
+    public void setItemApply(int itemApply) {
+        this.itemApply = itemApply;
     }
 
     public int getItemPrice() {
@@ -60,14 +78,6 @@ public class Item {
 
     public void setItemAddress(String itemAddress) {
         this.itemAddress = itemAddress;
-    }
-
-    public String getItemNumber() {
-        return itemNumber;
-    }
-
-    public void setItemNumber(String itemNumber) {
-        this.itemNumber = itemNumber;
     }
 
     public String getItemImage() {

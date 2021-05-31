@@ -37,11 +37,7 @@ public class OrderController {
     @PostMapping("/select")
     public List<Order> Select(){
         List<Order> list = orderService.getAllOrder();
-        for (Order order:list) {
-            String data = order.getOrderAddtime().split(" ")[0];
-            order.setOrderAddtime(data);
-            System.out.printf(order.getOrderTime());
-        }
+        System.out.printf(list.getClass().toString());
         return list;
     }
     @PostMapping("/getOrders")

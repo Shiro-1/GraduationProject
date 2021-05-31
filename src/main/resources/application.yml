@@ -10,7 +10,7 @@ spring:
     password: 123456
 
 logging:
-  config: src\main\resources\log4j2-spring.xml
+  config: log4j2-spring.xml
   logging:
     level:
       com:

@@ -1,0 +1,159 @@
+.top {
+    width: 1336px;
+    background: #fff;
+    border-bottom: 1px solid #dad9d7;
+    height: 50px;
+    margin: 0 auto;
+}
+body, div, h1, h2, h3, h4, h5, h6, p, img, ul, ol, li {
+    margin: 0;
+    padding: 0;
+}
+.top .fl {
+    display: inline-block;
+}
+.top .fl img {
+    width: 42px;
+    height: 42px;
+    margin-left: 35px;
+    margin-top: 5px;
+    float: left;
+}
+.top .fl span {
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    color: #464646;
+    float: left;
+    padding-left: 12px;
+}
+.top .fr {
+    float: right;
+    font-size: 16px;
+    height: 50px;
+    line-height: 50px;
+}
+.top .fr {
+    font-size: 16px;
+    line-height: 50px;
+}
+.top .fr span {
+    padding: 0px 15px;
+}
+.top .fr span:first-child {
+    color: #5EC89A;
+}
+.top .fr input {
+    width: 150px;
+    height: 24px;
+    margin-right: 35px;
+    margin-left: 35px;
+    border-radius: 6px;
+    border: 1px solid #D9D9D9;
+    color: #D9D9D9;
+    background: url() no-repeat 0px center;
+    background-position-x: 123px;
+    padding-left: 5px;
+    outline: none;
+}
+body {
+    font-family: "微软雅黑",Arial, Helvetica;
+    font-size: 12px;
+}
+a, a:hover {
+    color: #333;
+    text-decoration: none;
+}
+.top .fr span a:hover {
+    color: #5EC89A;
+}
+element.style {
+    height: 100%;
+    background-color: rgb(236, 240, 245);
+    opacity: 1;
+}
+.header {
+    width: 1336px;
+    height: 260px;
+    margin: 0 auto;
+}
+.banner {
+    background: none repeat scroll 0 0 #fff;
+    height: 260px;
+    margin: 0 auto;
+}
+.bannerCon {
+    height: 260px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+.bannerCon .num {
+    z-index: 10;
+    position: absolute;
+    right: 50%;
+    top: 235px;
+}
+.bannerCon .num a {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    text-align: center;
+    margin: 0 3px;
+    cursor: pointer;
+    background: url(../imgs/bannerNumA.png) no-repeat;
+    _background: url(../images/bannerNumA.gif) no-repeat;
+}
+.bannerCon ul li {
+    width: 100%;
+    position: absolute;
+}
+.content {
+    width: 1104px;
+    min-height: 526px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.footer {
+    width: 100%;
+    float: left;
+    margin-top: 120px;
+    text-align: center;
+    background-color: #5EC89A;
+    padding-top: 5px;
+    color: #ffffff;
+    font-size: 12px;
+}
+.footer .advise {
+    text-align: center;
+    color: #d44950;
+    font-size: 12px;
+}
+a, a:hover {
+    text-decoration: none;
+}
+.manner-small * {
+    font-size: 14px;
+}
+.middle {
+    height: 235px;
+    background-color: #ffffff;
+}
+.context{
+    margin-top: 20px;
+}
+.con_title{
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    margin-top: 16px;
+}
+.con_words {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 14px;
+}

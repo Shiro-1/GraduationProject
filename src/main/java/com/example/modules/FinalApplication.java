@@ -4,6 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -14,8 +16,10 @@ import java.net.UnknownHostException;
 @MapperScan("com.example.modules.activity.mapper")
 @CrossOrigin
 @SpringBootApplication
-public class FinalApplication {
-    public static void main(String[] args) throws UnknownHostException {
+public class FinalApplication extends SpringBootServletInitializer {
+    public static void main(String[] args) throws UnknownHostException
+
+    {
         ConfigurableApplicationContext application = SpringApplication.run(FinalApplication.class, args);
         Environment env = application.getEnvironment();
         String ip = InetAddress.getLocalHost().getHostAddress();
@@ -27,5 +31,10 @@ public class FinalApplication {
                 "External: \thttp://" + ip + ":" + port + path + "/\n\t" +
                 "Swagger-UI: \t\thttp://" + ip + ":" + port + path + "/doc.html\n" +
                 "----------------------------------------------------------");
+    }
+    @Override//为了打包springboot项目
+    protected SpringApplicationBuilder configure(
+            SpringApplicationBuilder builder) {
+        return builder.sources(this.getClass());
     }
 }
